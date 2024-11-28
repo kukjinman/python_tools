@@ -1,8 +1,8 @@
-
+# <데이터를 바로 사용하는 예>
 print(10)
+# <데이터를 변수에 저장하고 사용하는 예>
 a = 20
 print(a)
-
 print(type(a))
 
 
@@ -26,11 +26,23 @@ var_bool = True
 print(var_bool)
 print(type(var_bool))
 
+# 데이터 타입을 잘 못 사용하는 예
+var_int1 = 10
+var_int2 = 20
+var_str1 = "test"
+var_str2 = "code"
+
+print(var_int1 + var_int2)
+print(var_str1 + var_str2)
+
+# print(var_int1 + var_str1)
+
+
 #리스트
 var_list = [1,2,3]
 print(var_list)
 print(type(var_list))
-var_list.
+
 var_list2 = [1,2,3,'a',[1,2,'b']]
 print(var_list2)
 print(type(var_list2))
