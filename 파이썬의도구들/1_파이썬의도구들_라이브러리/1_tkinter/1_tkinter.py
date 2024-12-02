@@ -27,7 +27,7 @@ button.grid(row=2, column=0, pady=(20, 0), padx=5, sticky="nsew")
 exit_button = tk.Button(root, text="종료", command=root.quit, bg="#e74c3c", fg="#ffffff", font=("Helvetica", 14), bd=0)
 exit_button.grid(row=3, column=0, pady=(10, 10), padx=5, sticky="nsew")
 
-#6 행과 열의 비율 설정
+# #6 행과 열의 비율 설정
 for i in range(4):
     root.grid_rowconfigure(i, weight=1)
 root.grid_columnconfigure(0, weight=1)
