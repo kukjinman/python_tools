@@ -1,6 +1,6 @@
 import cv2
 
-#1 얼굴 인식용 Haar Cascade 로드
+#1 frontalface 정면 얼굴 인식용 필터
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 #2 이미지 읽기
