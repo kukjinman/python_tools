@@ -3,7 +3,6 @@ from tqdm import tqdm
 
 # Load the pre-trained face detector from OpenCV
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-sideface_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_profileface.xml')
 
 
 
@@ -16,7 +15,7 @@ def apply_mosaic(image, x, y, w, h, mosaic_scale=0.05):  # Adjusted mosaic_scale
     return image
 
 # Open the video file
-cap = cv2.VideoCapture('input_video_10sec.mp4')
+cap = cv2.VideoCapture('sample_vedio.mp4')
 
 # Get the video writer initialized to save the output video
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
