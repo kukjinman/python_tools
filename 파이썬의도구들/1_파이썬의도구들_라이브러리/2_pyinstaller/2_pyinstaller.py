@@ -1,18 +1,16 @@
+#1 subprocess 모듈을 가져옵니다.
 import subprocess
-import os
 
-
-def create_executable(script_name, output_dir='MyOutput'):
+#2 실행 파일을 생성하는 함수입니다.
+def create_exefile(python_file_path, output_dir='MyOutput'):
     try:
-        # 폴더가 존재하지 않으면 생성
-        os.makedirs(output_dir, exist_ok=True)
-
-        # PyInstaller 명령어 설정
-        command = f'pyinstaller --onefile --distpath {output_dir} --workpath {output_dir}/build --specpath {output_dir}/spec {script_name}'
-        subprocess.run(command, shell=True, check=True)
-        print(f"{script_name}의 실행 파일이 {output_dir}/dist 폴더에 생성되었습니다.")
+        #3 PyInstaller 명령어를 생성합니다.
+        command = f'pyinstaller --onefile --noconsole --distpath {output_dir} --workpath {output_dir}/build --specpath {output_dir}/spec {python_file_path}'
+        #4 명령어를 실행합니다.
+        subprocess.run(command)
+        print(f"{python_file_path}의 실행 파일이 {output_dir}/dist 폴더에 생성되었습니다.")
     except subprocess.CalledProcessError as e:
         print(f"오류 발생: {e}")
 
-if __name__ == "__main__":
-    create_executable('1_tkinter.py')  # 변환할 파이썬 파일 이름
+#5 실행 파일을 생성할 파이썬 파일을 지정합니다.
+create_exefile('../1_tkinter/1_tkinter.py')
