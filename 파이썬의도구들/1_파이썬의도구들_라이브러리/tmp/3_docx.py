@@ -2,7 +2,7 @@ from docx import Document
 
 # 전역 변수로 템플릿 경로와 출력 경로 설정
 TEMPLATE_PATH = '초등학교상장만들기.docx'
-OUTPUT_PATH = '완성된_상장.docx'
+OUTPUT_PATH = '수료증_templete.docx'
 
 def replace_awardInfo(student_name, award, date, grade, class_num):
     # 템플릿 문서 열기
