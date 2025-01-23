@@ -3,7 +3,7 @@ import subprocess
 
 def create_exefile(python_file_path, output_dir='MyOutput'):
     try:
-        command = f'pyinstaller --onefile --noconsole --distpath {output_dir} --workpath {output_dir}/build --specpath {output_dir}/spec {python_file_path}'
+        command = f'pyinstaller --onefile --distpath {output_dir} --workpath {output_dir}/build --specpath {output_dir}/spec {python_file_path}'
         subprocess.run(command)
         print(f"{python_file_path}의 실행 파일이 {output_dir}/dist 폴더에 생성되었습니다.")
     except subprocess.CalledProcessError as e:

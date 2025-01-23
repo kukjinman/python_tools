@@ -13,33 +13,30 @@ def on_login_click(event=None):
     # 환영 메시지를 표시합니다.
     messagebox.showinfo("Welcome", f"Welcome, {username}")
 
-#2 메인 윈도우를 생성합니다.
+#2 메인 윈도우
 root = tk.Tk()
 root.title("Login GUI")
 root.geometry("300x200")
 
-#3 사용자 이름을 위한 label을 생성합니다.
+#3 Username 라벨과 엔트리
 label_username = tk.Label(root, text="Username:")
 label_username.pack(pady=5)
-
-#4 사용자 이름을 입력받기 위한 입력 entry를 생성합니다.
 entry_username = tk.Entry(root)
 entry_username.pack(pady=5)
 
-#5 비밀번호를 위한 label을 생성합니다.
+
+#4 Password 라벨과 엔트리
 label_password = tk.Label(root, text="Password:")
 label_password.pack(pady=5)
-
-#6 비밀번호를 입력받기 위한 entry를 생성합니다.
 entry_password = tk.Entry(root, show="*")
 entry_password.pack(pady=5)
 
-#7 로그인 버튼을 생성합니다.
+#5 로그인 버튼
 button_login = tk.Button(root, text="Login", command=on_login_click)
 button_login.pack(pady=20)
 
-#8 Enter 키를 눌렀을 때 on_login_click 함수를 호출하도록 바인딩합니다.
+#6 Enter키 이벤트 추가
 root.bind('<Return>', on_login_click)
 
-#9 GUI 애플리케이션을 실행합니다.
+#7 GUI 애플리케이션을 실행합니다.
 root.mainloop()
