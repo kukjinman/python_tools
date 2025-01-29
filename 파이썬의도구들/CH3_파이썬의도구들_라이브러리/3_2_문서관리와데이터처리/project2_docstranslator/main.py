@@ -1,19 +1,19 @@
+import os
+
 from docx_manager import read_docx_files
 from docx_manager import write_docx_files
 from trans_manager import translate_contents
 
-def main():
-    input_directory = r'C:\Users\thate\PycharmProjects\python_tools\파이썬의도구들\CH3_파이썬의도구들_라이브러리\3_2_문서관리와데이터처리\project2_docstranslator\docs_example'
-    output_directory = r'C:\Users\thate\PycharmProjects\python_tools\파이썬의도구들\CH3_파이썬의도구들_라이브러리\3_2_문서관리와데이터처리\project2_docstranslator\output'
+input_directory = 'docs_example'
+output_directory = 'output'
 
-    # Read all docx files
-    docx_data = read_docx_files(input_directory)
+for docx_file in os.listdir(input_directory):
+    f_path = "docs_example/"
+    print(f"docx_file: {docx_file}")
+    f_path+=docx_file
+    print(f"f_path: {f_path}")
+    cur_data = read_docx_files(f_path)
 
-    translate_contents()
+    result = translate_contents(cur_data)
+    print(f"result: {result}")
 
-
-    # Write the translated content to new docx files
-    write_docx_files(docx_data, output_directory)
-
-if __name__ == "__main__":
-    main()

@@ -1,21 +1,15 @@
 import os
 from docx import Document
 
-def read_docx_files(directory):
-    data = []
-    files = os.listdir(directory)
-    docx_files = [f for f in files if f.endswith('.docx')]
+def read_docx_files(file_path):
+    doc = Document(file_path)
+    doc_text = ''
+    for para in doc.paragraphs:
+        doc_text += para.text + '\n'
 
-    for docx_file in docx_files:
-        file_path = os.path.join(directory, docx_file)
-        doc = Document(file_path)
-        file_data = {
-            'file_name': docx_file,
-            'content': [paragraph.text for paragraph in doc.paragraphs]
-        }
-        data.append(file_data)
+    # print(doc_text)
 
-    return data
+    return doc_text
 
 def write_docx_files(docx_data, output_directory):
     if not os.path.exists(output_directory):
