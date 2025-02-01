@@ -7,7 +7,7 @@ output_directory = 'output'
 #2 수료증을 생성하는 함수입니다.
 def create_certificates(list_var, template_path):
 
-    #3 리스트의 각 요소의 tuple값을 가져와서 변수에 저장합니다.
+    #3 리스트를 순회하며 number, class, name 값을 추출합니다.
     for item in list_var:
         number_, class_, name_ = item
 
