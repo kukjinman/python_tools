@@ -1,8 +1,7 @@
-#1 os와 Document를 가져옵니다.
 import os
 from docx import Document
 
-#2 docx 파일을 읽어서 텍스트를 반환하는 함수입니다.
+#2 read_docx_files 함수
 def read_docx_files(file_path):
     doc = Document(file_path)
     doc_text = ''
@@ -12,7 +11,7 @@ def read_docx_files(file_path):
     # print(doc_text)
     return doc_text
 
-#3 번역된 텍스트를 docx 파일로 저장하는 함수입니다.
+#4 write_docx_files 함수
 def write_docx_files(translated_data, output_directory, file_name):
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)

@@ -1,4 +1,4 @@
-#1 2_pyinstller.py 에서 가져온 코드입니다.
+# 2_pyinstller.py 에서 가져온 코드
 import subprocess
 
 def create_exefile(python_file_path, output_dir='MyOutput'):
@@ -9,5 +9,5 @@ def create_exefile(python_file_path, output_dir='MyOutput'):
     except subprocess.CalledProcessError as e:
         print(f"오류 발생: {e}")
 
-#2 완성품1 project_login_gui.py 실행 파일 생성합니다.
+#0 완성품1 project_login_gui.py 실행 파일 생성
 create_exefile('project_login_gui.py')
