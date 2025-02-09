@@ -5,26 +5,26 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-# SMTP 서버 설정
+#1 SMTP 서버 설정
 smtp_server = "smtp.gmail.com"
-smtp_user = "kukjinman@gmail.com"
-smtp_password = "mbns gavv xekv hcpu"  # Replace with your actual password
+smtp_user = "kukjinman2@gmail.com"
+smtp_password = "앱 비밀번호" # Google 계정의 앱 비밀번호 입력
 
 
-# Email 설정
+#2 Email 설정
 from_address = smtp_user
-to_address = "kukjinman2@gmail.com"
+to_address = "kukjinman@gmail.com"
 subject = "Test Email"
 body = "파이썬 도구G 첨부파일 예시 메일입니다."
 
-# Email 객체 생성
+#3 Email 객체 생성
 msg = MIMEMultipart()
 msg['From'] = from_address
 msg['To'] = to_address
 msg['Subject'] = Header(s='파일첨부 메일송신 테스트', charset='utf-8')
 msg.attach(MIMEText(body, 'plain',_charset='utf-8'))
 
-# 첨부파일 추가
+#4 첨부파일 추가
 filename = "test.txt"
 part = MIMEBase('application', 'octet-stream')
 attachment = open(filename, "rb")
@@ -34,7 +34,7 @@ part.add_header('Content-Disposition', f"attachment; filename= {filename}")
 msg.attach(part)
 
 
-# SMTP 서버 연결 및 이메일 전송
+#5 SMTP 서버 연결 및 이메일 전송
 try:
     server = smtplib.SMTP_SSL(smtp_server)
     server.login(smtp_user, smtp_password)
@@ -43,4 +43,5 @@ try:
     print("Email sent successfully")
 except Exception as e:
     print(f"Failed to send email: {e}")
+
 server.quit()
