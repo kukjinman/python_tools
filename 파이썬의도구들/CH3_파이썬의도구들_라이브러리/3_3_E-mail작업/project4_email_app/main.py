@@ -14,7 +14,7 @@ for item in certification_list:
     print(item[0], item[1], item[2], item[3])
 
     # def requestTo_send_email(from_address, password, to_address, subject, body, attached_file_path):
-    requestTo_send_email("kukjinman2@gmail.com","awde jkti pwjf nbak",
+    requestTo_send_email("kukjinman2@gmail.com","앱 비밀번호",
                          item[3], "파이썬 수료증 발급 안내",
                          f"안녕하세요. {item[2]}님! 파이썬 수료증 첨부파일입니다.",
                          f"certificate_{item[2]}.docx")
