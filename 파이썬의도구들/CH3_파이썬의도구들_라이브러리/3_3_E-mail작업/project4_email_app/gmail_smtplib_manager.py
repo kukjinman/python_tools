@@ -7,18 +7,22 @@ from email import encoders
 
 output_dir_path = 'output'
 
+#4 requestTo_send_email 함수
 def requestTo_send_email(from_address, password, to_address, subject, body, attached_file_path):
+
+    #5 SMTP 서버 설정
     smtp_server = "smtp.gmail.com"
     smtp_user = from_address
     smtp_password = password
 
-
+    #6 Email 객체 생성
     msg = MIMEMultipart()
     msg['From'] = from_address
     msg['To'] = to_address
     msg['Subject'] = Header(s=subject, charset='utf-8')
     msg.attach(MIMEText(body, 'plain', _charset='utf-8'))
 
+    #7 첨부파일 추가
     filename = f"{output_dir_path}/{attached_file_path}"
     part = MIMEBase('application', 'vnd.openxmlformats-officedocument.wordprocessingml.document')
     attachment = open(filename, "rb")
@@ -29,6 +33,7 @@ def requestTo_send_email(from_address, password, to_address, subject, body, atta
     part.add_header('Content-Disposition', f'attachment; filename="{encoded_filename}"')
     msg.attach(part)
 
+    #8 SMTP 서버 연결 및 이메일 전송
     try:
         server = smtplib.SMTP_SSL(smtp_server)
         server.login(smtp_user, smtp_password)
