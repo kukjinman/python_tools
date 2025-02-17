@@ -4,7 +4,7 @@ import cv2
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 #2 이미지 읽기
-image = cv2.imread('man-8499961_1280.jpg')
+image = cv2.imread('man_iamge.jpg')
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 #3 얼굴 검출
