@@ -14,7 +14,7 @@ def apply_mosaic(image, x, y, w, h, mosaic_scale=0.05):  # Adjusted mosaic_scale
     return image
 
 # 비디오 파일 열기
-cap = cv2.VideoCapture('sample_vedio.mp4')
+cap = cv2.VideoCapture('sample_video.mp4')
 
 # 출력 비디오 저장을 위한 초기화
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
