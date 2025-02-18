@@ -26,7 +26,6 @@ print_students(B_School)
 # =========================================================
 # 클래스를 사용한 예제
 
-
 class Student:
     def __init__(self, name, age, grade):
         self.name = name
