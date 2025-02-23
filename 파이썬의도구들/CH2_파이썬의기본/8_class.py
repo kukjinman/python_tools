@@ -1,63 +1,43 @@
-# 클래스를 사용하지 않은 예제
-A_School = []
-B_School = []
+# 자동차 객체를 생성합니다.
+car1 = {
+    "brand": "현대",
+    "model": "아반떼",
+    "year": 2020
+}
 
-# 학생 추가 함수
-def add_student(name, age, grade, school_):
-    student = {'name': name, 'age': age, 'grade': grade}
-    school_.append(student)
+car2 = {
+    "brand": "기아",
+    "model": "스포티지",
+    "year": 2021
+}
 
-# 학생 정보 출력 함수
-def print_students(school_):
-    for student in school_:
-        print(f"Name: {student['name']}, Age: {student['age']}, Grade: {student['grade']}")
+# 자동차 정보를 출력하는 함수
+def display_info(car):
+    print(f"{car['year']} {car['brand']} {car['model']}")
 
-# 학생 추가
-add_student('John', 15, '9th', A_School)
-add_student('Jane', 14, '8th', A_School)
-add_student('Tom', 16, '10th', B_School)
-add_student('Jerry', 15, '9th', B_School)
-
-# 학생 정보 출력
-print_students(A_School)
-print_students(B_School)
+# 자동차 정보 출력
+display_info(car1)
+display_info(car2)
 
 
 # =========================================================
 # 클래스를 사용한 예제
 
-class Student:
-    def __init__(self, name, age, grade):
-        self.name = name
-        self.age = age
-        self.grade = grade
+# 자동차 클래스를 정의합니다.
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
 
-    def print_info(self):
-        print(f"Name: {self.name}, Age: {self.age}, Grade: {self.grade}")
+    def display_info(self):
+        print(f"{self.year} {self.brand} {self.model}")
 
-class School:
-    def __init__(self):
-        self.students = []
+# 자동차 객체를 생성합니다.
+car1 = Car("현대", "아반떼", 2020)
+car2 = Car("기아", "스포티지", 2021)
 
-    def add_student(self, student):
-        self.students.append(student)
-
-    def print_students(self):
-        for student in self.students:
-            student.print_info()
-
-# 학생 추가
-A_School = School()
-A_School.add_student(Student('John', 15, '9th'))
-A_School.add_student(Student('Jane', 14, '8th'))
-
-B_School = School()
-B_School.add_student(Student('Tom', 16, '10th'))
-B_School.add_student(Student('Jerry', 15, '9th'))
-
-# 학생 정보 출력
-A_School.print_students()
-B_School.print_students()
-
-
+# 자동차 정보 출력
+car1.display_info()
+car2.display_info()
 
