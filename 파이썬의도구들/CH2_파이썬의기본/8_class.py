@@ -1,3 +1,27 @@
+# 클래스 기본 구조
+class MyClass:
+    # 클래스 변수
+    class_var = 0
+
+    # 생성자
+    def __init__(self, instance_var):
+        # 인스턴스 변수
+        self.instance_var = instance_var
+        MyClass.class_var = MyClass.class_var + instance_var
+
+    # 클래스 함수
+    def var_printer(self):
+        print(f"클래스 변수: {MyClass.class_var}, 인스턴스 변수: {self.instance_var}")
+
+# 클래스 사용 예
+Class_A = MyClass(10)
+Class_A.var_printer()
+Class_B = MyClass(5)
+Class_B.var_printer()
+
+
+
+
 # 자동차 객체를 생성합니다.
 car1 = {
     "brand": "현대",
