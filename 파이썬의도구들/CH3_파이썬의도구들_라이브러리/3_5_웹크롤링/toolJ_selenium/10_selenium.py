@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-#1 Selenium 웹 드라이버 실행
+#1 Selenium의 webdriver를 사용한 browser 객체 생성
 opt = webdriver.ChromeOptions()
 opt.add_experimental_option("detach", True)
 browser = webdriver.Chrome(options=opt)
