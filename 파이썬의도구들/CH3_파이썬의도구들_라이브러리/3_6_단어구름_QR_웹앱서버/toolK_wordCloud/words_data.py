@@ -1,0 +1,27 @@
+words = [
+    "Python", "Java", "C++", "JavaScript", "Ruby", "Go", "Rust", "PHP", "HTML", "CSS", "SQL", "R", "TypeScript", "Dart",
+    "Swift", "Kotlin", "Scala", "Perl", "Haskell", "Lua", "MATLAB", "Groovy", "Objective-C", "F#", "Elixir", "typeScript","Clojure",
+    "Erlang", "Fortran", "COBOL", "Pascal", "Ada", "Lisp", "Scheme", "Prolog", "Smalltalk", "Bash", "PowerShell", "VHDL",
+    "Verilog", "Assembly", "OCaml", "Racket", "Julia", "Crystal", "Nim", "D", "Forth", "AWK", "typeScript","Sed", "Tcl", "Logo", "APL",
+    "J", "SAS", "SPSS", "JavaScript", "Stata", "ABAP", "ActionScript", "typeScript","Algol", "Alice", "AngelScript", "Apex", "AspectJ", "AutoHotkey",
+    "AutoIt", "BlitzMax", "Boo", "Ceylon", "Chapel", "Cilk", "Clarion", "Clipper", "Cobra", "CoffeeScript", "ColdFusion",
+    "Curl", "DCL", "Dylan", "Eiffel", "JavaScript","Euphoria", "Factor", "Fantom", "Gambas", "GAMS", "GDScript", "Genie", "GML", "Gosu",
+    "Hack", "Harbour", "Haxe", "Icon", "IDL", "Io", "JavaScript", "Ioke", "J#", "JScript", "LabVIEW", "Ladder Logic", "LiveCode",
+    "LiveScript", "M4", "Max", "typeScript", "Mercury","Python", "Java", "C++", "JavaScript", "Modula-2", "Modula-3", "Monkey", "NATURAL", "Neko", "NXC", "Oberon", "OpenCL",
+    "OpenEdge ABL", "HTML", "CSS", "OpenSCAD", "PL/I", "PL/SQL", "Pike", "PILOT", "PostScript", "PureBasic", "Q","Python", "Java", "C++", "JavaScript", "Q#", "QBasic", "REBOL",
+    "Red", "Rexx", "Ring", "RPG", "S", "typeScript", "S-Lang", "SML", "SNOBOL", "SPARK", "SPIN", "typeScript", "SQR", "Squirrel", "Stan", "SuperCollider",
+    "TADS", "Terra", "Turing", "Vala", "VBScript", "typeScript", "VimL", "Viper", "Visual Basic", "Wolfram", "X10", "xBase", "XC", "Xojo",
+    "XQuery", "XSLT", "Yorick", "HTML", "CSS", "Zig", "ZPL", "Zsh", "Python", "Java", "C++", "JavaScript", "Ruby", "Go", "Rust", "PHP","Python", "Java", "C++", "JavaScript",
+    "HTML", "CSS", "SQL", "R", "TypeScript", "Dart", "Swift", "JavaScript", "Kotlin", "Scala", "Perl", "Haskell", "Lua","typeScript", "MATLAB", "Groovy",
+    "Objective-C", "F#", "Elixir", "Clojure", "Erlang", "Fortran", "COBOL", "Pascal", "Ada", "Lisp", "Scheme", "Prolog",
+    "Smalltalk", "Bash", "PowerShell", "VHDL", "Verilog", "Assembly", "OCaml", "Racket", "Julia", "Crystal", "Nim", "D", "typeScript"
+    "Forth", "AWK", "Sed", "Tcl", "Logo", "APL", "HTML", "CSS", "J", "SAS", "SPSS", "Stata", "ABAP", "ActionScript", "Algol", "Alice",
+    "AngelScript", "Apex", "AspectJ", "AutoHotkey", "AutoIt", "HTML", "CSS", "BlitzMax", "Boo", "Ceylon", "Chapel", "Cilk", "Clarion",
+    "Clipper", "Cobra", "CoffeeScript", "ColdFusion", "Curl", "DCL", "Dylan", "Eiffel", "Euphoria", "Factor", "Fantom",
+    "Gambas", "GAMS", "GDScript", "Genie", "GML","Python", "Java", "C++", "HTML", "CSS", "JavaScript", "Gosu", "Hack", "Harbour", "Haxe", "Icon", "IDL", "Io", "Ioke", "J#",
+    "JScript", "LabVIEW", "Ladder Logic", "LiveCode", "LiveScript", "M4", "Max", "Mercury", "Modula-2", "Modula-3", "Monkey",
+    "NATURAL", "Neko", "NXC", "Oberon", "OpenCL", "OpenEdge ABL", "OpenSCAD", "PL/I","Python", "Java", "C++", "JavaScript", "PL/SQL", "Pike", "PILOT", "PostScript",
+    "PureBasic", "Q", "Q#", "QBasic", "REBOL", "Red", "Rexx", "Ring", "RPG", "S", "S-Lang", "SML", "SNOBOL", "SPARK", "SPIN",
+    "SQR", "Squirrel", "Stan", "SuperCollider", "TADS", "Terra", "Turing", "Vala", "VBScript", "VimL", "Viper", "Visual Basic",
+    "Wolfram", "X10", "xBase", "XC", "Xojo", "XQuery", "XSLT", "Yorick", "Zig", "ZPL", "Zsh","Python", "Java", "C++", "JavaScript"
+]
