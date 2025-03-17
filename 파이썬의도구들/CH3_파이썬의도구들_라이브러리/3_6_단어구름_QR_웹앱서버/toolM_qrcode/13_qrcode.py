@@ -13,7 +13,7 @@ qr = qrcode.QRCode(
 
 #3 QR code에 데이터 추가
 qr.add_data(data)
-# qr.make(fit=True)
+qr.make(fit=True)
 
 #4 QR code 이미지 생성
 img = qr.make_image(fill='black', back_color='white')
