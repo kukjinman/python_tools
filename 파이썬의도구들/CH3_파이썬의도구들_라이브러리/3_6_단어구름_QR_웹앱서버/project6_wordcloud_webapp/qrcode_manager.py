@@ -13,9 +13,10 @@ def generate_qrcode(data):
     qr.make(fit=True)
     img = qr.make_image(fill='black', back_color='white')
 
-    #2 static 폴더 생성 및 qrcode.png 저장
-    if not os.path.exists('./static'):
-        os.makedirs('./static', exist_ok=True)
+    #2 assets 폴더 생성 및 qrcode.png 저장
+    assets_dir = os.path.join(os.path.dirname(__file__), 'assets')
+    if not os.path.exists(assets_dir):
+        os.makedirs(assets_dir, exist_ok=True)
 
-    img.save("./static/qrcode.png")
+    img.save(f"{assets_dir}/qrcode.png")
 
