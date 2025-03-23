@@ -14,9 +14,6 @@ def root_page():
         add_word(word_input)
         wordcloud_image = url_for('assets', filename='wordcloud.png')
 
+    #7 mainpage.html 렌더링
     return render_template('mainpage.html', wordcloud_image=wordcloud_image)
 
-
-#4 init_app 함수
-def init_app():
-    app.run(debug=True)
