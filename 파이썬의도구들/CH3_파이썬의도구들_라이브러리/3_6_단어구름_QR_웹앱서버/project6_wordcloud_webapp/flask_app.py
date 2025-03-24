@@ -16,6 +16,9 @@ def root_page():
 
         #4 wordcloud_manager의 add_word 함수 호출
         add_word(word_input)
-        wordcloud_image = url_for('assets', filename='wordcloud.png')
+        wordcloud_image = url_for('static', filename='wordcloud.png')
 
     return render_template('mainpage.html', wordcloud_image=wordcloud_image)
+
+# pythonanywhere에서는 app.run()을 사용하면 안됩니다.!
+# app.run(debug=True)
