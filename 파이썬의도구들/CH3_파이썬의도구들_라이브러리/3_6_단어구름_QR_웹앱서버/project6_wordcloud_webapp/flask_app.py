@@ -21,4 +21,4 @@ def root_page():
     return render_template('mainpage.html', wordcloud_image=wordcloud_image)
 
 # pythonanywhere에서는 app.run()을 사용하면 안됩니다.!
-# app.run(debug=True)
+app.run(debug=True)

@@ -9,7 +9,6 @@ masking_image = np.array(Image.open(f"{static_dir}/apple_img.png"))
 
 #5 add_word 함수
 def add_word(new_word):
-    global words
     # print(words)
     words.append(str(new_word))
     text = ' '.join(words)
@@ -19,4 +18,6 @@ def add_word(new_word):
     if not os.path.exists(static_dir):
         os.makedirs(static_dir, exist_ok=True)
 
-    wordcloud.to_file(f"{static_dir}/wordcloud.png")
+    png_path = os.path.join(static_dir, 'wordcloud.png')
+
+    wordcloud.to_file(png_path)

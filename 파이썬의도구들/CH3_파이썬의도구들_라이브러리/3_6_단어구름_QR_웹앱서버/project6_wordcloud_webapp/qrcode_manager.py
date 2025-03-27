@@ -18,5 +18,7 @@ def generate_qrcode(data):
     if not os.path.exists(static_dir):
         os.makedirs(static_dir, exist_ok=True)
 
-    img.save(f"{static_dir}/qrcode.png")
+    png_path = os.path.join(static_dir, 'qrcode.png')
+
+    img.save(png_path)
 
