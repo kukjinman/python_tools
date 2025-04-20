@@ -13,4 +13,4 @@ def create_exefile(python_file_path, output_dir='MyOutput'):
         print(f"오류 발생: {e}")
 
 #5 실행 파일을 생성할 파이썬 파일을 지정합니다.
-create_exefile('../toolA_tkinter/1_tkinter.py')
+create_exefile('../tool1_tkinter/1_tkinter.py')
