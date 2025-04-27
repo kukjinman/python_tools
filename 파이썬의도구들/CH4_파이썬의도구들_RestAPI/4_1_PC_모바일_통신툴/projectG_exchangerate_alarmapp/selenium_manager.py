@@ -27,7 +27,7 @@ def run_exchangerate_alarm(alarm_value):
 
     while(True):
         print("run_exchangerate_alarm() is called")
-        #2 get_exchangerate() 함수 호출
+        #2 get_exchangerate() 함수
         current_rate = get_exchangerate()
         print(f"Current exchange rate: {current_rate}")
 
@@ -35,7 +35,7 @@ def run_exchangerate_alarm(alarm_value):
         if current_rate > alarm_value:
             print(f"Alarm! Current exchange rate ({current_rate}) is higher than the set value ({alarm_value}).")
 
-            #6 send_whatsapp_message() 함수 호출
+            #6 send_whatsapp_message() 함수
             send_whatsapp_message(current_rate, alarm_value)
             break
 
