@@ -26,4 +26,4 @@ else:
         RAINGAUGE_NAME = i.find('RAINGAUGE_NAME').text
         RECEIVE_TIME = i.find('RECEIVE_TIME').text
         RAINFALL10 = i.find('RAINFALL10').text
-        print("강우량계명:", RAINGAUGE_NAME, "| 강우량 업데이트 시간:", RECEIVE_TIME, "| 10분 강우량:", RAINFALL10)
+        print("[강우량] 측정 위치:", RAINGAUGE_NAME, "| 업데이트 시간:", RECEIVE_TIME, "| 10분 강우량:", RAINFALL10)
