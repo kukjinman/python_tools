@@ -2,13 +2,13 @@
 import requests
 import xml.etree.ElementTree as ET
 
-#2 서울 열린 데이터 광장의 API key와 URL을 설정
+#2 서울시 실시간 주차장 API key와 URL을 설정
 api_key ='API key'
 num_disp = 5
 url = f'http://openapi.seoul.go.kr:8088/{api_key}/xml/GetParkingInfo/1/{num_disp}/'
 
 
-#3 서울 열린 데이터 API에 요청 및 response 객체 생성
+#3 서울시 실시간 주차장 API에 요청 및 response 객체 생성
 response = requests.get(url)
 
 #4 응답 상태 코드를 확인
@@ -27,5 +27,5 @@ else:
         NOW_PRK_VHCL_UPDT_TM = i.find('NOW_PRK_VHCL_UPDT_TM').text
         TPKCT = i.find('TPKCT').text
         NOW_PRK_VHCL_CNT = i.find('NOW_PRK_VHCL_CNT').text
-        print("주차장명:", PKLT_NM, "주차장 업데이트 시간:", NOW_PRK_VHCL_UPDT_TM, "총 주차면 수:", TPKCT, "현재 주차 차량 수:", NOW_PRK_VHCL_CNT)
+        print("주차장명:", PKLT_NM, "| 주차장 업데이트 시간:", NOW_PRK_VHCL_UPDT_TM, "| 총 주차면 수:", TPKCT, "현재 주차 차량 수:", NOW_PRK_VHCL_CNT)
 
