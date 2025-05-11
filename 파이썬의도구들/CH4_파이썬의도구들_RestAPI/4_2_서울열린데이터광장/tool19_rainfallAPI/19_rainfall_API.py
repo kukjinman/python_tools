@@ -21,7 +21,7 @@ else:
     root = ET.fromstring(response.text)
     # print(response.text)
 
-    #6 XML 데이터에서 주차장 정보를 추출
+    #6 XML 데이터에서 강우량 정보를 추출
     for i in root.iter('row'):
         RAINGAUGE_NAME = i.find('RAINGAUGE_NAME').text
         RECEIVE_TIME = i.find('RECEIVE_TIME').text
