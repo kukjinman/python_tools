@@ -4,9 +4,9 @@ import xml.etree.ElementTree as ET
 
 #2 지하철 운행정보 API key와 URL을 설정
 api_key ='API key'
-num_disp = 10
+num_disp = 5
 stationName = '서울'
-url = f'http://swopenAPI.seoul.go.kr/api/subway/{api_key}/xml/realtimeStationArrival/0/5/{stationName}'
+url = f'http://swopenAPI.seoul.go.kr/api/subway/{api_key}/xml/realtimeStationArrival/0/{num_disp}/{stationName}'
 
 #3 지하철 운행정보 API에 요청 및 response 객체 생성
 response = requests.get(url)
