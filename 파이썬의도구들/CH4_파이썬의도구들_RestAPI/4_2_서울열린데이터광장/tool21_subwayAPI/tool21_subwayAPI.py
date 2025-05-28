@@ -3,7 +3,7 @@ import requests
 import xml.etree.ElementTree as ET
 
 #2 지하철 운행정보 API key와 URL을 설정
-api_key ='API key'
+api_key ='614a4e786774686139364a59775670'
 num_disp = 10
 stationName = '서울'
 url = f'http://swopenAPI.seoul.go.kr/api/subway/{api_key}/xml/realtimeStationArrival/0/5/{stationName}'
@@ -21,11 +21,13 @@ else:
     root = ET.fromstring(response.text)
     print(response.text)
 
-    # #6 XML 데이터에서 지하철 운행정보 응답 정보를 추출
-    # for i in root.iter('row'):
-    #     M_NAME = i.find('M_NAME').text
-    #     A_NAME = i.find('A_NAME').text
-    #     A_PRICE = i.find('A_PRICE').text
-    #     P_DATE = i.find('P_DATE').text
-    #
-    #     print("[물가정보] 마트명:", M_NAME, "| 품목명:", A_NAME, "| 가격:", A_PRICE, "| 업데이트 시간:", P_DATE)
+    #6 XML 데이터에서 지하철 운행정보 응답 정보를 추출
+    for i in root.iter('row'):
+        subwayId = i.find('subwayId').text
+        trainLineNm = i.find('trainLineNm').text
+        updnLine = i.find('updnLine').text
+        statnNm = i.find('statnNm').text
+        arvlMsg2 = i.find('arvlMsg2').text
+        arvlMsg3 = i.find('arvlMsg3').text
+
+        print("[지하철 운행정보] 지하철 ID:", subwayId, "| 노선명:", trainLineNm, "| 상하행선:", updnLine, "| 역명:", statnNm, "| 도착 메시지 2:", arvlMsg2, "| 도착 메시지 3:", arvlMsg3)
