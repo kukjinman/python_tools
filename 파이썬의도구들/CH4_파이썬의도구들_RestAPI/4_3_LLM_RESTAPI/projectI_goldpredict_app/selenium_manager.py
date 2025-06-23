@@ -17,7 +17,7 @@ def get_gold_data():
     browser.get("https://finance.naver.com/item/main.naver?code=132030")
 
     #3 금값 데이터의 테이블에서 tr 요소들 추출
-    trs = browser.find_elements(By.CSS_SELECTOR, "#content > div.section.etf_nav > table > tbody > tr")\
+    trs = browser.find_elements(By.CSS_SELECTOR, "#content > div.section.etf_nav > table > tbody > tr")
 
     for tr in trs:
         #4 각 tr에서 td 요소 추출
