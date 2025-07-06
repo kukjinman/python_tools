@@ -25,7 +25,7 @@ msg['Subject'] = Header(s='파일첨부 메일송신 테스트', charset='utf-8'
 msg.attach(MIMEText(body, 'plain',_charset='utf-8'))
 
 #4 첨부파일 추가
-filename = "test.txt"
+filename = "attachment.txt"
 part = MIMEBase('application', 'octet-stream')
 attachment = open(filename, "rb")
 part.set_payload(attachment.read())
