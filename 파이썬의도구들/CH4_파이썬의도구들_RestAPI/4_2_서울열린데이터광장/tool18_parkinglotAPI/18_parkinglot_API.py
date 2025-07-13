@@ -3,7 +3,7 @@ import requests
 import xml.etree.ElementTree as ET
 
 #2 공영주차장정보 API key와 URL을 설정
-api_key ='464367784f74686138377a76495054'
+api_key ='API key'
 num_disp = 5
 url = f'http://openapi.seoul.go.kr:8088/{api_key}/xml/GetParkingInfo/1/{num_disp}/'
 

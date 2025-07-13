@@ -23,5 +23,5 @@ current_price = browser.find_element(by=By.CSS_SELECTOR, value='#content > div:n
 print(stock_name.text)
 print(current_price.text)
 
-#5 프로그램 종료
+#5 browser 종료
 # browser.quit()
