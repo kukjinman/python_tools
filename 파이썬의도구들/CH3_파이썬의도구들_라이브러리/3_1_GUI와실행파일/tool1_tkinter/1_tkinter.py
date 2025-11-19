@@ -1,4 +1,3 @@
-
 #1 준비 단계
 import tkinter as tk
 from tkinter import messagebox
@@ -9,7 +8,17 @@ def on_button_click():
 #2 메인 윈도우 생성
 root = tk.Tk()
 root.title("파이썬 GUI 예제")
-root.geometry("320x200")  # 창 크기 설정
+
+# 기존에 고정된 geometry 설정을 화면 중앙 배치로 바꿉니다
+window_width = 320
+window_height = 200
+# 창 크기 먼저 설정한 뒤 화면 크기 정보를 읽어 중앙 좌표 계산
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+pos_x = (screen_width - window_width) // 2
+pos_y = (screen_height - window_height) // 2
+root.geometry(f"{window_width}x{window_height}+{pos_x}+{pos_y}")
+
 root.configure(bg="#2c2c2c")  # 배경색을 어두운 회색으로 설정
 
 #3 텍스트 라벨 생성
