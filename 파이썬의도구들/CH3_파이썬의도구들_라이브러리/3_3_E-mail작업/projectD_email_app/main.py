@@ -1,4 +1,4 @@
-from pyxl_manager import read_certification_list_v2
+from pyxl_manager import read_certification_list
 from gmail_smtplib_manager import requestTo_send_email
 
 file_path = 'resource/파이썬수료증리스트_v2.xlsx'
@@ -6,7 +6,7 @@ file_path = 'resource/파이썬수료증리스트_v2.xlsx'
 print("project start")
 
 #0 수료증 인원 정보 리스트를 불러오기
-certification_list = read_certification_list_v2(file_path)
+certification_list = read_certification_list(file_path)
 
 #2 수료증 인원 정보 리스트를 순회
 for item in certification_list:

@@ -1,7 +1,7 @@
 import openpyxl
 
 #1 read_certification_list 함수
-def read_certification_list_v2(file_path):
+def read_certification_list(file_path):
 
     workbook = openpyxl.load_workbook(file_path)
     sheet = workbook.active
