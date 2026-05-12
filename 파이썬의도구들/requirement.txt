@@ -3,7 +3,7 @@
 
 pyinstaller==6.11.1
 python-docx==1.1.2
-googletrans==4.0.0rc1
+googletrans==4.0.2
 openpyxl==3.2.0b1
 pandas==2.2.3
 opencv-python==4.11.0.86

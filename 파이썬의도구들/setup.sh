@@ -67,8 +67,44 @@ echo ""
 # 패키지 설치
 echo -e "${GREEN}[3/3] 패키지 설치 중... (시간이 걸릴 수 있습니다)${NC}"
 python -m pip install --upgrade pip
-pip install -r requirement.txt --no-cache-dir
-if [ $? -eq 0 ]; then
+pip install -r requirement.txt --no-cache-dir --force-reinstall
+if [ $? -ne 0 ]; then
+    echo -e "${RED}[경고] 일부 패키지 설치에 실패했습니다.${NC}"
+fi
+echo ""
+
+# googletrans 4.x async → sync 호환 패치
+echo -e "${GREEN}[+] googletrans 동기 호환 패치 적용 중...${NC}"
+SITE_PACKAGES=$(python -c "import site; print(site.getsitepackages()[0])")
+cat > "$SITE_PACKAGES/sitecustomize.py" << 'PATCH'
+try:
+    import asyncio
+    import googletrans as _gt
+    _Orig = _gt.Translator
+
+    class _SyncTranslator:
+        def translate(self, text, dest='en', src='auto', **kwargs):
+            async def _run():
+                t = _Orig()
+                result = await t.translate(text, dest=dest, src=src)
+                await t.client.aclose()
+                return result
+            return asyncio.run(_run())
+
+        def detect(self, text, **kwargs):
+            async def _run():
+                t = _Orig()
+                result = await t.detect(text)
+                await t.client.aclose()
+                return result
+            return asyncio.run(_run())
+
+    _gt.Translator = _SyncTranslator
+except Exception:
+    pass
+PATCH
+echo -e "${GREEN}완료!${NC}"
+echo ""
     echo -e "${GREEN}완료!${NC}"
 else
     echo -e "${RED}[경고] 일부 패키지 설치에 실패했습니다.${NC}"

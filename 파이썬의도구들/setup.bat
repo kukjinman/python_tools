@@ -42,7 +42,37 @@ echo.
 :: 패키지 설치
 echo [3/3] 패키지 설치 중... (시간이 걸릴 수 있습니다)
 py -m pip install --upgrade pip
-pip install -r requirements.txt --no-cache-dir --force-reinstall --no-deps
+pip install -r requirement.txt --no-cache-dir --force-reinstall
+echo 완료!
+echo.
+
+:: googletrans 4.x async → sync 호환 패치
+echo [+] googletrans 동기 호환 패치 적용 중...
+for /f "delims=" %%i in ('python -c "import site; print(site.getsitepackages()[0])"') do set SITE_PACKAGES=%%i
+(
+echo try:
+echo     import asyncio
+echo     import googletrans as _gt
+echo     _Orig = _gt.Translator
+echo     class _SyncTranslator:
+echo         def translate^(self, text, dest='en', src='auto', **kwargs^):
+echo             async def _run^(^):
+echo                 t = _Orig^(^)
+echo                 result = await t.translate^(text, dest=dest, src=src^)
+echo                 await t.client.aclose^(^)
+echo                 return result
+echo             return asyncio.run^(_run^(^)^)
+echo         def detect^(self, text, **kwargs^):
+echo             async def _run^(^):
+echo                 t = _Orig^(^)
+echo                 result = await t.detect^(text^)
+echo                 await t.client.aclose^(^)
+echo                 return result
+echo             return asyncio.run^(_run^(^)^)
+echo     _gt.Translator = _SyncTranslator
+echo except Exception:
+echo     pass
+) > "%SITE_PACKAGES%\sitecustomize.py"
 echo 완료!
 echo.
 
