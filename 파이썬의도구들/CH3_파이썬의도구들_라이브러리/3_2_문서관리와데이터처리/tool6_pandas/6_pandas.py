@@ -15,5 +15,3 @@ print("df.iterrows() 결과")
 for index, row in df.iterrows():
     print(f"{index}번째")
     print(f"학생이름: {row['학생이름']}, 학년: {row['학년']}, 반: {row['반']}")
-
-pd.read_j
