@@ -23,7 +23,7 @@ else:
 
     #6 XML 데이터에서 기상관측정보 응답 정보를 추출
     for i in root.iter('row'):
-        RAINGAUGE_NAME = i.find('RAINGAUGE_NAME').text
-        RECEIVE_TIME = i.find('RECEIVE_TIME').text
-        RAINFALL10 = i.find('RAINFALL10').text
-        print("[강우량] 측정 위치:", RAINGAUGE_NAME, "| 업데이트 시간:", RECEIVE_TIME, "| 10분 강우량:", RAINFALL10)
+        RF_NM = i.find('RF_NM').text
+        DATA_CLCT_TM = i.find('DATA_CLCT_TM').text
+        RN_10M = i.find('RN_10M').text
+        print("[강우량] 측정 위치:", RF_NM, "| 업데이트 시간:", DATA_CLCT_TM, "| 10분 강우량:", RN_10M)

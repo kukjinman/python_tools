@@ -19,12 +19,12 @@ def get_rainfall_data(api_key, num_disp, district):
         # print(response.text)
 
         for i in root.iter('row'):
-            RAINGAUGE_NAME = i.find('RAINGAUGE_NAME').text
-            RECEIVE_TIME = i.find('RECEIVE_TIME').text
-            RAINFALL10 = i.find('RAINFALL10').text
-            print("[강우량] 측정 위치:", RAINGAUGE_NAME, "| 업데이트 시간:", RECEIVE_TIME, "| 10분 강우량:", RAINFALL10)
+            RF_NM = i.find('RF_NM').text
+            DATA_CLCT_TM = i.find('DATA_CLCT_TM').text
+            RN_10M = i.find('RN_10M').text
+            print("[강우량] 측정 위치:", RF_NM, "| 업데이트 시간:", DATA_CLCT_TM, "| 10분 강우량:", RN_10M)
 
             #5 ret_msg에 강우량 정보를 추가
-            ret_msg += f"[강우량] 측정 위치: {RAINGAUGE_NAME} | 업데이트 시간: {RECEIVE_TIME} | 10분 강우량: {RAINFALL10}\n"
+            ret_msg += f"[강우량] 측정 위치: {RF_NM} | 업데이트 시간: {DATA_CLCT_TM} | 10분 강우량: {RN_10M}\n"
 
     return ret_msg
