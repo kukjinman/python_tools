@@ -9,22 +9,9 @@ echo.
 py -3.12 --version > nul 2>&1
 if errorlevel 1 (
     echo [!] Python 3.12가 설치되어 있지 않습니다.
-    echo     Python 3.12를 자동으로 다운로드 및 설치합니다...
-    echo.
-    :: Python 3.12 설치 파일 다운로드
-    curl -o python312_installer.exe https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe
-    if errorlevel 1 (
-        echo [오류] 다운로드에 실패했습니다. 인터넷 연결을 확인해 주세요.
-        pause
-        exit /b
-    )
-    echo     설치 중... (잠시 기다려 주세요)
-    python312_installer.exe /quiet InstallAllUsers=0 PrependPath=1 Include_launcher=1
-    del python312_installer.exe
-    echo     Python 3.12 설치 완료!
-    echo.
-    :: PATH 갱신을 위해 새 환경변수 로드
-    call refreshenv > nul 2>&1
+    echo     1-4 챕터의 파이참 프로젝트 생성 가이드를 참고하여 Python 3.12를 설치 후 다시 실행해 주세요.
+    pause
+    exit /b
 )
 
 :: 가상환경 생성
