@@ -5,9 +5,7 @@ import xml.etree.ElementTree as ET
 #2 물가정보 API key와 URL을 설정
 api_key ='API key'
 num_disp = 5
-marketname = '이마트(청계천점)'
-item = '토마토 1kg'
-url = f'http://openapi.seoul.go.kr:8088/{api_key}/xml/ListNecessariesPricesService/1/{num_disp}/{marketname}/{item}/'
+url = f'http://openapi.seoul.go.kr:8088/{api_key}/xml/ListNecessariesPricesService/1/{num_disp}'
 
 
 #3 물가정보 API에 요청 및 response 객체 생성
