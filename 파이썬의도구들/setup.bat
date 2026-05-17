@@ -1,5 +1,6 @@
 @echo off
-chcp 65001 > nul
+chcp 65001 > nul 2>&1
+setlocal enabledelayedexpansion
 echo =============================================
 echo    python_tools 환경 세팅을 시작합니다...
 echo =============================================
@@ -9,7 +10,7 @@ echo.
 py -3.12 --version > nul 2>&1
 if errorlevel 1 (
     echo [!] Python 3.12가 설치되어 있지 않습니다.
-    echo     1-4 챕터의 파이참 프로젝트 생성 가이드를 참고하여 Python 3.12를 설치 후 다시 실행해 주세요.
+    echo     https://www.python.org 에서 Python 3.12를 설치 후 다시 실행해 주세요.
     pause
     exit /b
 )
@@ -28,8 +29,8 @@ echo.
 
 :: 패키지 설치
 echo [3/3] 패키지 설치 중... (시간이 걸릴 수 있습니다)
-py -m pip install --upgrade pip
-pip install -r requirement.txt --no-cache-dir --force-reinstall
+python -m pip install --upgrade pip
+python -m pip install -r requirement.txt --no-cache-dir
 echo 완료!
 echo.
 
