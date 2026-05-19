@@ -31,9 +31,18 @@ if /i "%PROCESSOR_ARCHITECTURE%"=="x86" (
 )
 
 if exist "resource\python312\python.exe" (
-    powershell -NoProfile -Command "Write-Host '[i] resource\python312 Python 3.12를 사용합니다.' -ForegroundColor Green"
-    set PYTHON_CMD=resource\python312\python.exe
-    goto CREATE_VENV
+    :: ctypes 정상 동작 여부 확인 (embeddable Python은 ctypes 불완전)
+    resource\python312\python.exe -c "import ctypes" > nul 2>&1
+    if !errorlevel! equ 0 (
+        powershell -NoProfile -Command "Write-Host '[i] resource\python312 Python 3.12를 사용합니다.' -ForegroundColor Green"
+        set PYTHON_CMD=resource\python312\python.exe
+        goto CREATE_VENV
+    ) else (
+        powershell -NoProfile -Command "Write-Host '[!] 기존 Python이 불완전합니다. 재설치합니다...' -ForegroundColor Yellow"
+        rmdir /s /q resource\python312
+        if exist ".venv" rmdir /s /q .venv
+        echo.
+    )
 )
 
 :: tar.gz 없으면 curl로 자동 다운로드
@@ -65,6 +74,11 @@ echo.
 set PYTHON_CMD=resource\python312\python.exe
 
 :CREATE_VENV
+:: 기존 .venv가 있으면 삭제 후 재생성 (Python 버전 불일치 방지)
+if exist ".venv" (
+    powershell -NoProfile -Command "Write-Host '[i] 기존 .venv를 초기화합니다...' -ForegroundColor Yellow"
+    rmdir /s /q .venv
+)
 powershell -NoProfile -Command "Write-Host '[2/4] pip 최신화 중...' -ForegroundColor Yellow"
 %PYTHON_CMD% -m pip install --upgrade pip -q
 powershell -NoProfile -Command "Write-Host '완료!' -ForegroundColor Green"
