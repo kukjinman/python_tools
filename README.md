@@ -6,7 +6,7 @@
 1. 웹 브라우저를 통해 GitHub 링크에 접속한 뒤 화면 우측 상단의 초록색 **`[<> Code]`** 버튼을 클릭하고, 나타나는 메뉴에서 **`[Download ZIP]`**을 선택하여 파일을 다운로드합니다.
 2. 다운로드가 완료되면 해당 압축 파일 위에서 마우스 오른쪽 버튼을 눌러 **`[압축 풀기]`** 메뉴를 선택하여 압축을 해제합니다.
 
-![GitHub ZIP 다운로드 및 압축 해제](./resource/images/image1.png)
+![GitHub ZIP 다운로드 및 압축 해제](파이썬의도구들/resource/images/image1.png)
 *▲ 웹 브라우저에서 ZIP 파일 다운로드 및 압축 해제 예시*
 
 ---
@@ -18,52 +18,29 @@
 * 본 GitHub 저장소 상단의 `Code` 버튼을 눌러 Git Repository URL(`https://github.com/kukjinman/python_tools`)을 복사합니다.
 * 1-3챕터에서 설치한 **PyCharm** 프로그램을 실행한 뒤 **`[Clone Repository]`**를 누르고, `URL`란에 복사해온 주소를 입력합니다. `Directory`에는 코드를 가져올 폴더 경로를 지정해 줍니다.
 
-![PyCharm Repository Clone](./resource/images/image2.png)
+![PyCharm Repository Clone](파이썬의도구들/resource/images/image2.png)
 *▲ 파이참에서 Clone Repository 실행 및 URL 입력 화면*
 
 #### 2. 프로젝트 신뢰 및 탐색기 열기
 * PyCharm 내부에서 보안 관련 경고 창이 나타나면 **`[Trust Project]`**를 눌러줍니다.
 * 왼쪽 프로젝트 탐색기창에서 `setup.bat` 파일에 마우스 오른쪽 버튼을 클릭하고 **`[Open In]` ➡️ `[Explorer]`**를 선택합니다.
 
-![프로젝트 신뢰 및 탐색기 열기](./resource/images/image3.png)
+![프로젝트 신뢰 및 탐색기 열기](파이썬의도구들/resource/images/image3.png)
 *▲ Trust Project 선택 및 setup.bat 파일 탐색기 연동 화면*
 
 #### 3. setup.bat 실행을 통한 패키지 자동 설치
 * 실행된 윈도우 탐색기 폴더 안에서 **`setup.bat`** 배치 파일을 더블클릭으로 실행합니다.
 * 책에 포함된 모든 도구(라이브러리)들의 패키지 설치가 자동으로 진행되며, 약 5분 정도 소요됩니다. 패키지 설치가 완료되면 아무 키나 눌러 창을 닫아줍니다.
 
-![setup.bat 실행 화면](./resource/images/image4.png)
+![setup.bat 실행 화면](파이썬의도구들/resource/images/image4.png)
 *▲ setup.bat 배치 파일을 통한 필수 의존성 패키지 자동 설치 화면*
 
 #### 4. 파이참 인터프리터(Interpreter) 설정 진입
 * 파이참으로 돌아와 우측 상단의 톱니바퀴 버튼을 클릭하고 **`[Settings]`**를 누른 뒤, 왼쪽 검색창에 `Interpreter`를 검색하여 **`[Python Interpreter]`** 화면을 엽니다.
 * 오른쪽 위의 **`[Add Interpreter]` ➡️ `[Add Local Interpreter...]`**를 순서대로 클릭합니다.
 
-![인터프리터 설정 진입](./resource/images/image5.png)
+![인터프리터 설정 진입](파이썬의도구들/resource/images/image5.png)
 *▲ 파이참 설정 메뉴에서 Add Local Interpreter 진입 화면*
 
 #### 5. 가상환경(.venv) 위치 변경 및 적용
-* 새로 열린 설정 창에서 기존에 세팅되어 있는 프로젝트 경로를 우리가 Git Clone해와서 `setup.bat`으로 새로 만들어준 `.venv` 위치로 잡히도록 우측 폴더 아이콘을 눌러 경로를 변경해 줍니다.
-
-![인터프리터 가상환경 위치 변경](./resource/images/image6.png)
-*▲ 생성된 가상환경 폴더(.venv)로 인터프리터 위치 지정*
-
-#### 6. 기존 인터프리터 선택(Select existing) 및 최종 확인
-* 만약 이미 해당 버전이 존재한다는 경고가 뜨면 **`[Select existing Interpreter]`**를 클릭해 줍니다.
-* `Python path`가 새로 매칭한 경로(`.\.venv\Scripts\python.exe`)로 올바르게 변경된 것을 확인하고 **`[OK]`**를 눌러 최종 적용합니다.
-
-![인터프리터 수동 지정](./resource/images/image7.png)
-*▲ Select existing Interpreter 선택 및 최종 경로 승인*
-
-#### 7. 환경 세팅 완료 및 정상 구동 확인
-* 마지막으로 파이참 인터프리터 화면에 패키지 리스트들이 정상적으로 출력되는지 확인한 후 **`[OK]`** 버튼으로 닫아줍니다. 이제 실습 코드들이 아무런 문제 없이 완벽하게 실행됩니다!
-
-![구동 확인](./resource/images/image8.png)
-*▲ 정상 구동 확인 및 패키지 리스트 적용 완료 화면*
-
----
-
-## 💡 독자분들을 위한 안내 말씀
-
-* **습득과 적용의 중요성**: 외부에서 제공하는 API(공공데이터, 외부 서비스 등)의 정책 및 사양은 수시로 변경될 수 있습니다. 단순한 코드 복사를 넘어, 기술의 변화 흐름 속에서 직접 확인하고 유연하게 코드를 적용하는 실전 감각과 활용 감각을 기르는 것을 최우선 목표로 삼아보세요. 과정을 편안하게 따라오시다 보면 자연스럽게 내 것이 됩니다.
-* **에러 발생 시**: 실습 도중 막히거나 에러가 발생하더라도 걱정하지 마세요! 책 본문에서 가이드해 드리는 AI 코파일럿(Copilot) 조수를 활용하면, 독자님의 현재 개발 환경과 맥락을 읽어내어 가장 정확한 맞춤형 해결법을 친절하게 제시받으실 수 있습니다.
+* 새로 열린 설정 창에서 기존에 세팅되어 있는 프로젝트 경로를 우리가 Git Clone해와서 `setup.bat`으로 새로 만들어
