@@ -1,0 +1,31 @@
+<!-- templates/template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordCloud WebApp</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form, h1, img {
+            margin-bottom: 13px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the WordCloud Webpage</h1>
+    <form method="POST">
+        <input type="text" name="word_input" placeholder="Enter the Word!" required>
+        <button type="submit">Submit</button>
+    </form>
+    <img src="{{url_for('static', filename='qrcode.png')}}" width="200" height="200">
+
+    {% if wordcloud_image %}
+        <img src="{{ wordcloud_image }}" alt="WordCloud Image" width="400" height="400">
+    {% endif %}
+</body>
+</html>

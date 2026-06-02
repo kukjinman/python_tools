@@ -1,0 +1,5 @@
+wordcloud
+numpy
+Pillow
+qrcode
+
