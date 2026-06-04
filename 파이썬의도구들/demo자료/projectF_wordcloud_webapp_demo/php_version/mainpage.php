@@ -18,6 +18,11 @@
 </head>
 <body>
     <h1>단어로 구름을 만드는 웹앱</h1>
+    <?php if (isset($error_message)): ?>
+        <div style="color: red; font-weight: bold; margin-bottom: 10px;">
+            <?php echo $error_message; ?>
+        </div>
+    <?php endif; ?>
     <form method="POST">
         <input type="text" name="word_input" placeholder="단어를 입력하세요!" required>
         <button type="submit">제출</button>
