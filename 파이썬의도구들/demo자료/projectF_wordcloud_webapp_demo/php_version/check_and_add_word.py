@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-check_and_add_word.py - 비속어 검증 및 WordCloud 생성
+check_and_add_word.py - Korcen을 사용한 비속어 검증 및 WordCloud 생성
 사용법: python3 check_and_add_word.py "단어"
 """
 import sys
@@ -9,27 +9,22 @@ import os
 import numpy as np
 from PIL import Image
 from wordcloud import WordCloud
+from korcen import korcen
 
 static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 words_file = os.path.join(static_dir, 'words.json')
-
-# 한글 비속어 리스트
-BANNED_WORDS = [
-    '씨발', '병신', '객년', '년놈', '놈', '개새끼', '새끼', '지랄', '미친', '미쳤',
-    '씨', '개', '뻑', '띠', '한심', '정신'
-]
 
 # 마스킹 이미지
 masking_image = np.array(Image.open(os.path.join(static_dir, 'apple_img.png')))
 
 
 def is_bad_word(word):
-    """비속어 포함 여부 확인"""
-    lower_word = word.lower()
-    for banned in BANNED_WORDS:
-        if banned in lower_word:
-            return True
-    return False
+    """Korcen을 사용하여 비속어 포함 여부 확인"""
+    # korcen.check(text, id=None, foreign=False)
+    # text: 검사할 텍스트
+    # id: None (한글 일반 비속어 검사)
+    # foreign: False (한글 검사)
+    return korcen.check(word)
 
 
 def load_words():
@@ -49,7 +44,7 @@ def save_words(words):
 def add_word(new_word):
     """단어를 추가하고 워드클라우드 이미지를 생성"""
 
-    # 비속어 검증
+    # Korcen으로 비속어 검증
     if is_bad_word(new_word):
         print("ERROR: 부적절한 단어입니다.")
         return False
@@ -92,6 +87,9 @@ if __name__ == '__main__':
         add_word(word)
     else:
         print("Usage: python3 check_and_add_word.py <word>")
+
+
+
 
 
 

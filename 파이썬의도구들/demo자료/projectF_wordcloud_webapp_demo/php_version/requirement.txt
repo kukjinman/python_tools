@@ -2,4 +2,4 @@ wordcloud
 numpy
 Pillow
 qrcode
-
+korcen
