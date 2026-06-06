@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordCloud WebApp</title>
+    <title>단어구름 WebApp</title>
     <style>
         body {
             display: flex;
@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <h1>단어로 구름을 만드는 웹앱</h1>
+    <h1>파이썬의 도구들 - 단어구름</h1>
     <?php if (isset($error_message)): ?>
         <div style="color: red; font-weight: bold; margin-bottom: 10px;">
             <?php echo $error_message; ?>
