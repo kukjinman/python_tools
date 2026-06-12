@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어구름 WebApp</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form, h1, img {
+            margin-bottom: 13px;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>파이썬의 도구들 - 단어구름</h1>
+    {% if error_message %}
+        <div class="error-message">{{ error_message }}</div>
+    {% endif %}
+
+    <form method="POST">
+        <input type="text" name="word_input" placeholder="단어를 입력하세요!" required>
+        <button type="submit">제출</button>
+    </form>
+    <img src="{{ url_for('static', filename='qrcode.png') }}" alt="접속 QR 코드" width="200" height="200">
+
+    {% if wordcloud_image %}
+        <img src="{{ wordcloud_image }}" alt="단어구름 이미지" width="400" height="400">
+    {% endif %}
+</body>
+</html>
